@@ -1,0 +1,28 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function() {
+    var total = parseFloat(getParameterByName('total'));
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    var $table = $('table');
+    var $total = $('.total');
+    
+    // display total
+    $total.text('Total: ' + total.toFixed(2) + ' ريال');
+    
+    // loop through cart and display items
+    cart.forEach(function(item) {
+      var row = '<tr><td>' + item.name + '</td><td>' + item.quantity + '</td><td>' + item.price.toFixed(2) + '</td><td>' + item.total.toFixed(2) + '</td></tr>';
+      $table.append(row);
+    });
+  });
+  
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  }
+  </script>
