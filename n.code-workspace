@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"chatgpt.gpt3.apiKey": "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"
+	},
+	"extensions": {
+		"recommendations": [
+			"timkmecl.chatgpt"
+		]
+	}
+}
